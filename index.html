@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <button onclick="take_snapshot()" class="btn btn-success">Take Snapshot</button>
+  </div>
+  <script>
+    function preload() {
+
+}
+
+function setup() {
+    canvas = createCanvas(650, 500);
+    video = createCapture(VIDEO);
+    video.hide();
+}
+
+function draw() {
+    image(video, 100, 100, 400, 300);
+    fill('#3196f5');
+    stroke('#3196f5');
+    rect(75, 100, 50, 300);
+    rect(475, 100, 50, 300);
+    rect(150, 375, 300, 50);
+    rect(150, 75, 300, 50);
+    fill('#ad7453');
+    stroke('#ad7453');
+    circle(100, 100, 100);
+    circle(500, 100, 100);
+    circle(100, 400, 100);
+    circle(500, 400, 100);
+}
+
+function take_snapshot() {
+    save('Image.jpg');
+}
+  </script>
+</body>
+
+</html>
